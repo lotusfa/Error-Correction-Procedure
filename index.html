@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="lotusfa">
+    <meta name="keywords" content="error correction procedure,erro Procedure, machine learning, AI">
+
+    <link rel="icon" href="https://res.cloudinary.com/dcmnwc3ux/image/upload/v1493918347/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7_2017-05-05_%E4%B8%8A%E5%8D%881.09.00_fnw5k9.png">
+
+    <title>Error Correction Procedure</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://v4-alpha.getbootstrap.com/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
+
+    
+  </head>
+
+  <body>
+
+    <!-- Begin page content -->
+    <div class="container">
+
+      
+      <div id="initiator" >
+        <h1>Error Correction Procedure</h1>
+
+        <div class="form-group">
+          <label for="learning_rate">Learning Rate:</label>
+          <input type="text" class="form-control" id="learning_rate">
+        </div>
+
+        <div class="form-group">
+          <label for="learning_rate">Init Weight:</label>
+          <input type="text" class="form-control" id="init_weight">
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Test Case:</label>
+          <textarea class="form-control" rows="5" id="test_case" onchange="update_init_weight();"></textarea>
+        </div>
+
+        <button type="button" class="btn btn-primary active" onclick="run_simulation();">Run Simulation</button>
+
+      </div>
+
+      <div id="simulator" style="font-size: 10px;" >
+        
+        
+        <h3 id="final_result"></h3>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Wight</th>
+              <th scope="col">Learning Rate</th>
+              <th scope="col">Score</th>
+              <th scope="col">#Generation</th>
+              <th scope="col">
+                <button type="button" class="btn btn-primary active btn-sm" onclick="stop_simulation();">Back</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="w_tag">
+                0,0,0,0
+              </td>
+              <td id="l_tag">
+                0.2
+              </td>
+              <td id="s_tag">
+                0
+              </td>
+              <td id="g_tag">
+                0
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary active btn-sm" onclick="train(0);">Train</button>
+              </td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Data (D)</th>
+              <th scope="col">Old Weight (W)</th>
+              <th scope="col">Σ(D*W)</th>
+              <th scope="col">(Predict==Actual)? | Error</th>
+              <th scope="col">New Weight (W')</th>
+            </tr>
+          </thead>
+          <tbody id="result">
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Power By: LOTUS FA, <a href="https://lotusfa.com/">lotusfa.com</a></span>
+      </div>
+    </footer>
+    <script src="./main.js"></script>
+    <!--Google Analysis -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-80492067-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>
